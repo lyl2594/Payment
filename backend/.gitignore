@@ -1,8 +1,4 @@
+# 构建产物(mvn spring-boot:run / mvn package 自动重建)
 target/
-logs/
-*.log
-*.gz
-.idea/
-*.iml
-# H2 数据库提交到仓库(保留演示数据),仅忽略锁文件
+# H2 运行锁文件(仅后端运行时存在,提交会导致另一台机器数据库恢复异常)
 data/*.trace.db

@@ -1,0 +1,26 @@
+2026-09-11T09:17:01.457+08:00  INFO 3188 --- [diff-payment] [main] c.payment.diff.DiffPaymentApplication    : Starting DiffPaymentApplication using Java 17.0.20.1 with PID 3188 (C:\Users\aw\Desktop\Payment\backend\target\classes started by aw in C:\Users\aw\Desktop\Payment\backend)
+2026-09-11T09:17:01.463+08:00  INFO 3188 --- [diff-payment] [main] c.payment.diff.DiffPaymentApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-09-11T09:17:02.546+08:00  INFO 3188 --- [diff-payment] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-09-11T09:17:02.560+08:00  INFO 3188 --- [diff-payment] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-11T09:17:02.561+08:00  INFO 3188 --- [diff-payment] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-09-11T09:17:02.618+08:00  INFO 3188 --- [diff-payment] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-09-11T09:17:02.618+08:00  INFO 3188 --- [diff-payment] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1110 ms
+2026-09-11T09:17:02.697+08:00  INFO 3188 --- [diff-payment] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-11T09:17:02.923+08:00  INFO 3188 --- [diff-payment] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/diffpay user=SA
+2026-09-11T09:17:02.923+08:00  INFO 3188 --- [diff-payment] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-11T09:17:02.934+08:00  INFO 3188 --- [diff-payment] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/diffpay'
+2026-09-11T09:17:03.650+08:00  INFO 3188 --- [diff-payment] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-09-11T09:17:03.660+08:00  INFO 3188 --- [diff-payment] [main] c.payment.diff.DiffPaymentApplication    : Started DiffPaymentApplication in 2.673 seconds (process running for 3.012)
+2026-09-11T09:17:24.250+08:00  INFO 3188 --- [diff-payment] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-11T09:17:24.252+08:00  INFO 3188 --- [diff-payment] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-11T09:17:24.253+08:00  INFO 3188 --- [diff-payment] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-09-11T09:23:06.606+08:00  INFO 3188 --- [diff-payment] [http-nio-8080-exec-6] c.payment.diff.payment.PaymentService    : 发起支付, orderNo=BJ20260910000097, txnNo=TX20260911000065, amountCent=5000
+2026-09-11T09:23:08.280+08:00  INFO 3188 --- [diff-payment] [http-nio-8080-exec-3] c.payment.diff.payment.PaymentService    : 回调流水置失败, txnNo=TX20260911000065, reason=MOCK_PAY_USER_FAIL
+2026-09-11T09:23:08.296+08:00  INFO 3188 --- [diff-payment] [http-nio-8080-exec-10] c.p.diff.payment.MockChannelController   : 模拟渠道已投递回调, txnNo=TX20260911000065, result=FAILED, 受理code=0
+2026-09-11T09:23:15.614+08:00  INFO 3188 --- [diff-payment] [http-nio-8080-exec-7] c.payment.diff.payment.PaymentService    : 发起支付, orderNo=BJ20260910000097, txnNo=TX20260911000066, amountCent=5000
+2026-09-11T09:23:20.107+08:00  INFO 3188 --- [diff-payment] [http-nio-8080-exec-9] c.payment.diff.payment.PaymentService    : 回调流水置失败, txnNo=TX20260911000066, reason=MOCK_PAY_USER_FAIL
+2026-09-11T09:23:20.109+08:00  INFO 3188 --- [diff-payment] [http-nio-8080-exec-8] c.p.diff.payment.MockChannelController   : 模拟渠道已投递回调, txnNo=TX20260911000066, result=FAILED, 受理code=0
+2026-09-11T09:24:35.472+08:00  INFO 3188 --- [diff-payment] [http-nio-8080-exec-4] c.payment.diff.payment.PaymentService    : 发起支付, orderNo=BJ20260910000097, txnNo=TX20260911000067, amountCent=5000
+2026-09-11T09:24:36.604+08:00  INFO 3188 --- [diff-payment] [http-nio-8080-exec-5] c.payment.diff.payment.PaymentService    : 回调流水置失败, txnNo=TX20260911000067, reason=MOCK_PAY_USER_FAIL
+2026-09-11T09:24:36.606+08:00  INFO 3188 --- [diff-payment] [http-nio-8080-exec-7] c.p.diff.payment.MockChannelController   : 模拟渠道已投递回调, txnNo=TX20260911000067, result=FAILED, 受理code=0
+2026-09-11T09:26:46.813+08:00  INFO 3188 --- [diff-payment] [http-nio-8080-exec-7] c.payment.diff.payment.PaymentService    : 发起支付, orderNo=BJ20260910000097, txnNo=TX20260911000068, amountCent=5000
