@@ -1,0 +1,1 @@
+﻿psql verify: 3 tables (admin_user, diff_order, payment_txn) + seed admin present, health UP

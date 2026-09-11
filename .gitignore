@@ -1,0 +1,9 @@
+# IDE 个人配置
+.trae/
+.idea/
+.vscode/
+*.iml
+
+# 系统文件
+Thumbs.db
+.DS_Store

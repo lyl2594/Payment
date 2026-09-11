@@ -1,0 +1,11 @@
+﻿=== 1 correct login ===
+HTTP 200
+{"code":0,"message":"ok","data":{"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4OTAyODc5NywiZXhwIjoxNzg5MDcxOTk3fQ.diW9yTiTwR1J-T_TXxJXvnLDlCzAFy6P4QHb7x8Mqso","username":"admin","displayName":"è¿è¥ç®¡çå","role":"ADMIN"}}
+=== 2 wrong password ===
+HTTP 200
+{"code":24001,"message":"è´¦å·æå¯ç éè¯¯","data":null}
+=== 3 /me no token ===
+HTTP 401
+=== 4 /me with token ===
+HTTP 200
+{"code":0,"message":"ok","data":{"username":"admin"}}

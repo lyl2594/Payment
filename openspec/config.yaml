@@ -1,0 +1,46 @@
+﻿﻿schema: spec-driven
+
+# Project context (optional)
+# This is shown to AI when creating artifacts.
+context: |
+  项目：to-C 公司补差价系统（替代客服手动让用户转账补差价的收款流程）。
+  定位：可演示完整链路，核心资金链路（幂等/状态机/对账）按生产标准设计，外围功能简化。
+  技术栈（已与用户对齐，2026-09-10 grill-me 需求分析，用户确认维持）：
+  - 后端：Java 17 + Spring Boot 3 单体，MyBatis-Plus，Maven
+  - 前端：Vue3/Vite 独立工程（后台管理端、H5 支付页、模拟收银台三个页面）
+  - 数据库：H2 文件模式默认（零依赖演示）+ PostgreSQL profile 可切换
+  - 支付：PaymentGateway 接口抽象 + MockGateway（内置模拟微信/支付宝风格收银台，完整 预支付→收银台→异步回调→状态流转，可模拟支付失败）
+  关键设计决策：
+  - 权限：后台 JWT 登录；H5 通过短链匿名访问
+  - 范围：只收款+记录；退款、支付后履约触发为 non-goal（数据模型预留字段）
+  - "商品名额"仅是商品描述字段，非限量库存，无超卖问题
+  - 补差价单必须引用原订单：原订单号必填（引用式关联，系统不做存在性校验——原订单系统不在本项目范围，留对接扩展点），选填原订单金额/原商品名称；同一原订单允许多笔补差价单（1:N）；列表/详情/看板支持按原订单号归集
+  - 订单有效期默认 48h：定时任务扫描关单 + 回调惰性校验双保险
+  - 回调幂等三道防线：验签 + 外部交易号唯一约束 + 状态机前置校验（单实例，不加分布式锁）
+  - 短链：SecureRandom 8 位 Base62 随机短码，金额等服务端下发，有效期跟随订单
+  - 数据模型：diff_order（补差价单）与 payment_txn（支付流水）分表，支持失败后多次发起支付
+  - 测试：核心资金链路测试（回调幂等、非法状态流转、超时关单、短码安全）
+  - 后端领域分包：order / payment / link / admin / dashboard
+  Domain 约束（资金类业务）：金额计算禁止浮点，统一 Long 分存储传输；所有资金变更必须可审计（操作人/时间戳/流水留痕）
+
+# Per-artifact rules
+rules:
+  proposal:
+    - 必须包含 "Non-goals"（明确不做什么）章节
+  tasks:
+    - 每个任务必须是可独立验证的最小单元，粒度不超过 2 小时
+    - 每个涉及行为的任务，必须包含对应的测试步骤描述
+
+# Per-operation guidance
+operations:
+  apply:
+    guidance:
+      - 每完成一个任务，必须运行该任务相关的测试，并把测试原始输出（stdout/stderr）保存到 openspec/changes/<change-name>/evidence/ 目录
+      - 勾选 - [x] 之前必须确认测试通过；测试失败不得勾选，须暂停并报告
+      - 涉及 Web 页面的任务，必须用浏览器实际访问并截图，截图保存到 openspec/changes/<change-name>/evidence/screenshots/
+      - 每张截图必须附一段文字分析（同名 .analysis.md）：验证目标、实际观察到什么、是否符合规范预期
+      - 证据文件命名：task-<任务号>-<简短描述>.<扩展名>，如 task-1.2-test-output.txt
+      - 禁止只贴测试结论不贴过程；证据必须包含原始输出
+  archive:
+    guidance:
+      - 归档前汇总本次变更的证据清单，确认每个任务都有对应证据

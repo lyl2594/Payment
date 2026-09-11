@@ -1,0 +1,2 @@
+﻿HTTP 200
+{"code":0,"message":"ok","data":{"status":"UP","time":"2026-09-10T16:09:42.167834"}}

@@ -1,0 +1,12 @@
+﻿2026-09-10T16:15:59.658+08:00  INFO 13216 --- [diff-payment] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-09-10T16:15:59.708+08:00  INFO 13216 --- [diff-payment] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-09-10T16:15:59.708+08:00  INFO 13216 --- [diff-payment] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 917 ms
+2026-09-10T16:15:59.745+08:00  INFO 13216 --- [diff-payment] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-10T16:15:59.922+08:00  INFO 13216 --- [diff-payment] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/diffpay user=SA
+2026-09-10T16:15:59.926+08:00  INFO 13216 --- [diff-payment] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-10T16:15:59.932+08:00  INFO 13216 --- [diff-payment] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/diffpay'
+2026-09-10T16:16:00.558+08:00  INFO 13216 --- [diff-payment] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-09-10T16:16:00.568+08:00  INFO 13216 --- [diff-payment] [main] c.payment.diff.DiffPaymentApplication    : Started DiffPaymentApplication in 2.205 seconds (process running for 2.51)
+2026-09-10T16:16:01.098+08:00  INFO 13216 --- [diff-payment] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-10T16:16:01.098+08:00  INFO 13216 --- [diff-payment] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-10T16:16:01.098+08:00  INFO 13216 --- [diff-payment] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms

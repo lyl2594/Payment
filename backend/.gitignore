@@ -1,0 +1,8 @@
+target/
+logs/
+*.log
+*.gz
+.idea/
+*.iml
+# H2 数据库提交到仓库(保留演示数据),仅忽略锁文件
+data/*.trace.db

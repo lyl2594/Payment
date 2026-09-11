@@ -1,0 +1,17 @@
+﻿=== task-1.1 mvn spring-boot:run 启动验证（原始输出摘录，来源 backend/logs/diffpay.log）===
+
+2026-09-10T15:56:48.113+08:00  INFO 13784 --- [diff-payment] [main] c.payment.diff.DiffPaymentApplication    : Starting DiffPaymentApplication using Java 17.0.20.1 with PID 13784 (C:\Users\aw\Desktop\Payment\backend\target\classes started by aw in C:\Users\aw\Desktop\Payment\backend)
+2026-09-10T15:56:48.117+08:00  INFO 13784 --- [diff-payment] [main] c.payment.diff.DiffPaymentApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-09-10T15:56:48.601+08:00  WARN 13784 --- [diff-payment] [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.payment.diff]' package. Please check your configuration.
+2026-09-10T15:56:48.980+08:00  INFO 13784 --- [diff-payment] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-09-10T15:56:48.996+08:00  INFO 13784 --- [diff-payment] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-10T15:56:48.996+08:00  INFO 13784 --- [diff-payment] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-09-10T15:56:49.047+08:00  INFO 13784 --- [diff-payment] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-09-10T15:56:49.047+08:00  INFO 13784 --- [diff-payment] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 892 ms
+2026-09-10T15:56:49.078+08:00  INFO 13784 --- [diff-payment] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-10T15:56:49.265+08:00  INFO 13784 --- [diff-payment] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/diffpay user=SA
+2026-09-10T15:56:49.267+08:00  INFO 13784 --- [diff-payment] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-10T15:56:49.275+08:00  INFO 13784 --- [diff-payment] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/diffpay'
+2026-09-10T15:56:49.727+08:00  INFO 13784 --- [diff-payment] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-09-10T15:56:49.733+08:00  INFO 13784 --- [diff-payment] [main] c.payment.diff.DiffPaymentApplication    : Started DiffPaymentApplication in 2.002 seconds (process running for 2.32)
+

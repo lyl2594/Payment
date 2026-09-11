@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/diffpay
+    driver-class-name: org.postgresql.Driver
+    username: diffpay
+    password: diffpay
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql

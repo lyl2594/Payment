@@ -1,0 +1,53 @@
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  application:
+    name: diff-payment
+  datasource:
+    url: jdbc:h2:file:./data/diffpay
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  sql:
+    init:
+      mode: always
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    banner: false
+
+logging:
+  file:
+    name: ./logs/diffpay.log
+  level:
+    com.payment.diff: INFO
+
+# 业务配置
+diffpay:
+  # 订单默认有效期（小时）
+  order:
+    default-expire-hours: 48
+  # 短链对外基础地址
+  link:
+    base-url: http://localhost:8080/s
+  # 支付/前端地址与密钥
+  pay:
+    h5-base-url: http://localhost:5173
+    # 本服务对外地址（回调回环投递目标）
+    self-base-url: http://localhost:8080
+    mock-channel-secret: mock-channel-secret-2026
+  jwt:
+    secret: diffpay-demo-jwt-secret-please-change-2026
+    expire-minutes: 720
